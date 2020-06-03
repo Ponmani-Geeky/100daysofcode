@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <body>
+            <script>
+                // Unlike other language we dont want to use
+                // datatypes like string,int ,javascript will
+                // implicitly manage the datatypes according to the values
+                //old javascript "var" will be used instead of let
+                let day1="Welcome day1"; 
+                day1="Hey have nice day" //this will be override the previous value
+                console.log(`${day1} ponmani`)//[output] Hey have nice day ponmani
+                alert(day1);
+                alert(typeof(day1)); //output will be "String"
+                
+                let hey=7;
+                alert(typeof(hey));//output will be "number"
+                
+            
+                const dayy1="Welcome day1";
+                dayy1="Hey its const"; 
+                alert(dayy1);//this will give "Uncaught type error we cant override it"
+            </script>
+        </body>
+    </head>
+</html>
