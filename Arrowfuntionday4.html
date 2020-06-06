@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <body>
+            <script>
+                //ES5 Funtion
+                function add (a=5,b=5)
+                {
+                    return (a+b);
+                }
+                 console.log(add());
+
+                const normal={
+                    price:"100",
+                    bread: "needed",
+                    myfuntion:function(){
+                        return `${this.price}`
+                    }
+                }
+                // ES6 Arrow Funtion
+                let added=(a=6,b=6)=>{
+                    return a+b;
+                }
+                alert(added());
+
+                const normal1={
+                    price:"100",
+                    bread: "needed",
+                    myfuntion1:()=>{ // arrow funtion should not used inside methods and construtor
+                        return `${this.price}`// it will give us undefined this.price
+                    }
+                }
+            </script>
+        </body>
+    </head>
+</html>
