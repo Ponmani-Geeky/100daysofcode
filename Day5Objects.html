@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <body>
+            <script>
+                //objects in javascript
+                let fun={
+                    simple:"talk with close frds",
+                    hard: "going out of home",
+                    safe: "wash hands",
+                    normal:"watch movies"
+                }
+                console.log(fun.simple);// output: talk with close frds
+
+                 // adding element istrue to user object
+                 fun.istrue=true;
+                 console.log(fun);// it will show the "added element" with fun object
+
+                 //deleting element in object
+                 delete fun.normal;//this will normal object
+                 
+                 //checking the key is present in object or not
+                 let check="simple" in fun;
+                 console.log(check);// return true
+
+                 //looping all the keys using forloop
+                 for(key in fun)
+                 {
+                     console.log(key);// prints [simple,hard,safe,istrue]
+                     console.log(fun[key]);//prints [all the values for its corresponding keys]
+                 }
+            </script>
+        </body>
+    </head>
+</html>
