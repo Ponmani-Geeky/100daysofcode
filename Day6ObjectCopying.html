@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+       <title>Day5</title>
+    </head>
+    <body>
+          <script>
+              // primitive copy
+              let happy="have fun"; 
+              let fun=happy;// now value will stored independently in fun
+
+              // object will have reference copy
+              let something={
+                  code:"good"
+              }
+              let diffent=something // value will not copy here ,only reference of the object is copied
+              something.code="bad"// the change will affect the diffent also
+
+              //how to overcome this?
+              let overcome={
+                  coding:"learn new things"
+              }
+              let how={istrue: true}
+              let what={isfalse:false}
+              
+              //Object.assign(Dest,[arg1,arg2......])//syntax
+              let newvalue=Object.assign(overcome,how,what)//
+              console.log(overcome);// value of how and what will be copied into overcome 
+              console.log(newvalue);
+          </script>
+    </body>
+</html>
