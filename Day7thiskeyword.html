@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>
+            Day7
+        </title>
+    </head>
+    <body>
+        <script>
+            //this keyword in javascript
+            // 1.this inside object funtion ,it refers to object
+            // 2. this inside simple factory funtion , it refers to gobal / window object
+
+            let keyprop={
+                firstname:"ponmani",
+                lastname:"venkatesan",
+                name(){
+                    console.log(keyprop.firstname);// it will get us value but bad practice
+                    console.log(this.firstname);// good to use this ,inside object fun ,so refers to object
+                }
+            }
+            keyprop.name();
+
+            function newname(){
+                   console.log(this);// it will refers to window object , because it is simple funtion
+            }
+            newname();
+            
+            //this in construtor
+            function Profile(){ // eventhough simple function, it is a construtor so ,this refers to object
+                this.name=name;
+                console.log(this);//refers to object
+            }
+
+            let namevalue=new Profile("mani");//new will create new object puts this inside it.
+
+        </script>
+    </body>
+</html>
