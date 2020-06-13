@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Day11
+        </title>
+    </head>
+    <body>
+        <script>
+            let billion =1000000000;
+            let billion1=1e9;// short way to write billion
+
+            console.log(billion==billion1);// true 
+
+            let bill=1e-6;
+            console.log(bill);//0.000001
+
+            let str=255;
+            alert(str.toString(16));//hex value ---- ff
+            alert(str.toString(2));//binary value----- 11111111
+
+            let digit=12.35;
+            console.log(digit.toFixed(1)); // 12.3
+            console.log(digit.toFixed(2)); //12.35
+
+            alert(isFinite("15"))// true   if value is number returns true
+            alert(isFinite("str"))// false  if value if string returns false
+
+            alert(parseInt('100px')); // return integer part "100"
+            alert(parseFloat('12.5em')); // 12.5
+
+            alert(parseInt('a123'))// if character comes first then -- stops 'NAN'
+        </script>
+    </body>
+</html>
