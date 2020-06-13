@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Day10
+        </title>
+    </head>
+    <body>
+        <script>
+            // Symbol() is a new primitive type added in ES6
+            let something= Symbol();
+            let thing = Symbol();
+
+            console.log(something==thing)// false
+            // because each time when we create symbol
+            // it is new identifier , it is uniquie
+
+            let newvalue=Symbol("hello")
+            console.log(newvalue); // symbol(hello) ---- output
+           // alert(something)// alert acpts string type ,so it will give error
+
+           
+            alert(newvalue.toString())// Symbol(hello)
+            alert(newvalue.description);// hello --- will be printed
+
+            let sym= Symbol.for("name")// gobal registry
+            let sym1=Symbol.for("firstname")
+
+            console.log(Symbol.keyFor(sym));//name
+
+
+            //object
+            let firstname=Symbol("firstname");
+            let person={
+                [firstname]:"ponmani"
+            }
+            console.log(firstname);
+
+
+        </script>
+    </body>
+</html>
