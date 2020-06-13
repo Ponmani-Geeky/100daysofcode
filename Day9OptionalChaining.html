@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Day9
+        </title>
+    </head>
+    <body>
+        <script>
+            let user={}
+            console.log(user.address.street);// Error ,we are access the value which is no exist
+
+            // to solve the problem "option chaining concept"
+            let user={}
+            console.log(user&&address&&street);// old format to check ,value exist or not
+            console.log(user?.address?.street); // optional chaining ,new format to check value exist or not?
+        </script>
+    </body>
+</html>
