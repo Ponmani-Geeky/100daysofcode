@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Day12
+        </title>
+    </head>
+    <body>
+        <script>
+           //Strings in javascript
+           let str1="hello"; // old way of string
+           let str2='hello man';// another old way
+           let str3=`hey man `; // backtick is modern way of using string 
+           console.log(str3.length); // 8 ---length of str3
+           console.log(str1[0]);// prints first charcter 'h'
+           console.log(str1.charAt(0));// h -- alternative for above one
+
+           // backlash is escape character
+           let str4="I\'m an  engineer";// backlash used to print quotes
+           console.log(str4);
+
+           for(let s of str2)
+           {
+               console.log(s);// prints string character one by one
+           }
+
+           let name=`popmani`;
+           console.log(name.toUpperCase());// PONMANI
+
+           console.log(name.indexOf('p'));// it will search whole string for given value
+           console.log(name.indexOf('p',1))// 2 , it will search from first position
+         
+           //includes
+           console.log(name.includes('p'))// true , it has character p
+           // startsWith
+           console.log(name.startsWith('x'))// false, it is not start with x
+           // endwith
+           console.log(name.endsWith('i'))// true , it ends with i
+            
+           //slice
+           let love='positivity'
+           console.log(love.slice(2,5)); // sit , starts from 2nd position and end before 5
+           console.log(love.slice(2));   //sitivity, prints full string from 2
+           console.log(love.slice(-4,-1)); // vit , negative value starts from end 
+
+           //substring
+           let option='optimistic'
+           console.log(option.substring(2,6));// timi , works same as slice
+           console.log(option.substring(9,3));// imisti , eventhough if big value givenfirst it will take lessvalue
+           console.log(option.substring(-4,5));// optim , -ve values treated as zero
+
+           //substr
+           let spread='lovedmani'
+           console.log(spread.substr(2,1))// v , from 2nd postion it will print 1 character 
+           console.log(spread.substr(2,2));//ve , from 2nd pos it will print 2 character
+           console.log(spread.substr(-2,1));//n , neg value start from end and print one charcter
+
+           
+
+        </script>
+    </body>
+</html>
