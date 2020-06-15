@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Day13
+        </title>
+    </head>
+    <body>
+        <script>
+            let moneyheist=['professor','berlin','noirobi','inspector']
+            console.log(moneyheist[2]);// noirobi
+            console.log(moneyheist.length);// 4
+            // adding element to array
+            moneyheist[4]='ponmani';
+            console.log(moneyheist[4]);// ponmani , it added at position 4 in array
+
+            // pop , remove last element
+            moneyheist.pop();// ponmani removed from the team [array]
+            console.log(moneyheist);
+
+            //push , add the element at last
+            moneyheist.push('ponmani'); // ponmani again added to team [array]
+            console.log(moneyheist);
+
+            //shift , removes the first element
+            moneyheist.shift();
+            console.log(moneyheist);
+
+            //oh captain[professor] is missing in team 
+            // how to add him in same place??
+
+            //unshift ,addes the element at first
+            moneyheist.unshift('professor');
+            console.log(moneyheist);
+
+            // for-loop is ok , but what is for..of loop?
+            for(let money of moneyheist){
+                console.log(money);// iterates through the array
+            }
+        </script>
+    </body>
+</html>
