@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Day14
+        </title>
+    </head>
+    <body>
+        <script>
+            //Array methods using Vinnaithandi varuvaya
+
+            //splice
+            let love=['jessie','karthik','hate']
+            love.splice(2,1);// form 2nd position delete 1 element , so delete hate
+            console.log(love);//jessie,karthik
+            love.splice(2,0,'father','mother');// from 2nd position delete 0 elements but add 'father and mother'
+            console.log(love);//jessie,karthik
+            
+            //slice
+            let love2=['jessie','karthick','fight','brother'];
+            let happy=love2.slice(0,2);
+            let hate=love2.slice(-2);//form 2nd second position to end
+            console.log(love2);//doest change orginal array
+            console.log(happy);//jessie,karthik
+            console.log(hate);// fight,brother
+
+            //concat
+            let karthick=['karthick'];
+            let jessie=['jessie'];
+            let again=karthick.concat(jessie);
+            console.log(again);//karthick,jessie
+
+            //concat of array and object
+            let father=['this is not good']
+            let lovers={
+                0:'please',
+                1:'understand',
+                [Symbol.isConcatSpreadable]:true,// without this we cant concat array with object
+                length:2
+            }
+            let good=father.concat(lovers);
+            console.log(good);
+
+            // foreach loop
+            let together=['father','mother','jessie','karthick','bike','house']
+            together.forEach((to,index,array)=>{
+                console.log(to , index , array);// each element , index of element , full array
+            })
+
+            //indexOf , includes
+             let spreadlove=['Hey','karthick','spread','love'];
+             console.log(spreadlove.indexOf('love'));//3
+             console.log(spreadlove.includes('spread'))//true
+
+             //find
+             let love3=[
+                 {id:1,name:'karthick'},
+                 {id:2,name:'jessie'},
+                 {id:3,name:'love'}
+             ]
+              let gotvalue=love3.find(l=>l.id==3)
+              console.log(gotvalue.name);//love
+
+              //filter
+              let something=love3.filter(l=>l.id<3)
+              console.log(something);//{id:1,name:'karthick'} ,{id:2,name:'love'}
+
+              //map
+              let connect=love3.map(l=>l.name.length);
+              console.log(connect);//8 , 6 , 4
+
+              //sort
+              let somethings=[1,4,3];
+              somethings.sort((a,b)=>a-b);//ascending order , b-a will give descending order
+              console.log(somethings);//1,3,4
+
+              //reverse
+              console.log(somethings.reverse());//4,3,1
+              
+              //spilt
+              let family='karthik,amma,appa'
+              let sep=family.split(', ');
+              for(let s of sep)
+              {
+                  console.log(`I love ${s}`)// I love karthick ,amma.....
+              }
+
+              //reduce
+              let sum=[1,2,3,4,5];
+              let result=sum.reduce((sum,current)=>sum+current,0);
+              console.log(result);//sum of the number --- 15
+
+        </script>
+    </body>
+</html>
