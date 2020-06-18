@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Day15
+        </title>
+    </head>
+    <body>
+        <script>
+            //iterator in javascript
+           let numbers=[1,2,3,4];// arrays are normally iterable
+           let range={ // objects are not iterable by default
+               form:1,
+               to:5,
+
+               [Symbol.iterator](){
+                  this.current=this.form
+                  return this;
+               },
+
+               next(){
+                   if(this.current<=this.to){
+                       
+                       return{value:this.current++,done:false};
+                   }
+                   else {
+                       return{done:true}
+                   }
+               }
+           };
+           for(let num of range){
+               console.log(num)
+           }
+
+           let names={
+               fname:'ponmani',
+               lname:'venktesan'
+           }
+
+           names[Symbol.iterator]=function(){
+               let properties = Object.keys(names);
+               let count=0;
+            //    let isDone = false;
+               let next = () => {
+                //    if(count>=properties.length){
+                //        isDone=true;
+                //    }
+                // return{done:isDone, value:this[properties[count++]]};
+                if(count<properties.length){
+                    return{done:false, value:this[properties[count++]]};
+                }
+                else{
+                    return{done:true};
+                }
+                   
+               }
+               return{next};
+           };
+
+           for(let name of names){
+               console.log(name);
+           }
+
+        </script>
+    </body>
+</html>
