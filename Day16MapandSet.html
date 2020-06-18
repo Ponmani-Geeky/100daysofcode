@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+             Day16
+        </title>
+    </head>
+    <body>
+        <script>
+            // Map
+            let map=new Map();
+
+            map.set('day',1);
+            map.set(1,'day');
+            console.log(map.get('day'));// 1
+            console.log(map.size);
+
+            let hello={name:'ponmani'}
+
+            map.set(hello,'hey');
+            console.log(map.get(hello));// even objects can be used as a key
+
+            //getting first element form map
+            console.log('First element',Array.from(map)[0])// converts map to array and getting first element
+            console.log('last element',Array.from(map)[map.size-1]);// gets last element form map
+            console.log('first elemetn',map.entries().next().value);//total first map
+            console.log('first key',map.keys().next().value);// first map key 
+            console.log('first value',map.values().next().value);//first map value
+            
+            for(let m of map.keys()){
+                console.log('keys',m);//keys will print
+            }
+
+            for(let m1 of map.values()){
+                console.log('values',m1);//values will print
+            }
+
+            for(let m2 of map){
+                console.log('entries',m2);// key and values will print
+            }
+
+            //Object.entries() ---- acpt object and return array
+            let anyobj={
+                fname:'hello',
+                lname:'ponmani'
+            }
+
+            let maped=new Map(Object.entries(anyobj));
+            console.log(maped);//will array containing anyobject
+
+            //Object.fromEntries()------ opp to entries [acpt map/array and return object]
+
+            let map1=new Map([['apple',2],['orange',3]]);
+            let map2=new Map();
+            map2.set('apple',1);
+            map2.set('orange',3);
+            console.log(map1);//this
+            console.log(map2);// and are same
+
+            let helobjec=Object.fromEntries(map1);
+            console.log(helobjec);//{apple:2,orange:3}------ map converted to obj here
+
+            //Set------ wont accpt duplicate values
+            let set1=new Set();
+            set1.add('apple',1,'hello');//eventhough if we any no of values , it will only first value
+            console.log(set1);//apple
+            set1.add('hello');
+            
+            set1.forEach((value,valueagain,set)=>{
+                console.log('for1',value);//apple
+                console.log('for2',valueagain);//apple --- just to have compatablity with map this happened
+                console.log('for3',set);// total set
+            });
+        </script>
+    </body>
+</html>
