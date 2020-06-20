@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Day18
+        </title>
+    </head>
+    <body>
+        <script>
+           //like map.keys ,map.values,map.entries object also has such methods to implement
+           let obj={
+               firstname:'ponmani',
+               lastname:'venkatesan',
+               position:'software eng',
+               place:'Tamilnadu'
+           }
+           console.log('object keys',Object.keys(obj));//prints only keys--- firstname,lastname....
+           console.log('object values',Object.values(obj));//print values---- ponmani,venkatesan,software eng....
+           console.log("object entries",Object.entries(obj));// prints both----[[firstname,ponmani]...]
+           let constring=Object.fromEntries(
+               Object.entries(obj).map(([key,value])=>[key,value+' '+'hello'])
+           )
+           console.log(constring.place);// Tamilnadu hello
+        </script>
+    </body>
+</html>
