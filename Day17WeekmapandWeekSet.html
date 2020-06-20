@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Day17
+    </title>
+</head>
+
+<body>
+    <script>
+        //WeekMap and WeekSet
+
+        //weakmap
+        let weekmap = new WeakMap();//it will use only obj as a key
+        let option = {
+            fname: 'ponmani',
+            lname: 'karnan'
+        }
+        weekmap.set(option, 'hello');
+        option = null;
+        console.log(weekmap.has(option));//both value inside and object will me removed from memeory
+
+        //Normal map
+        let weekmap=new Map();//it will use only obj as a key
+        let option={
+            fname:'ponmani',
+            lname:'karnan'
+        }
+        weekmap.set(option,'hello');
+        option=null;
+        console.log(weekmap.entries());//i will print [option and 'hello'] eventhough option=null
+
+        // Weekset
+        let weekset = new WeakSet();
+
+        let john = { name: "John" };
+        let pete = { name: "Pete" };
+        let mary = { name: "Mary" };
+        weekset.add(john).add(pete).add(mary);
+        john= null
+        console.log('weakset',weekset.has(john));//false
+    </script>
+</body>
+
+</html>
