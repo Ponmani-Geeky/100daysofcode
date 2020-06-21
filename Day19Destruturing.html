@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAY 19</title>
+</head>
+<body>
+    <script>
+        let des=['ponmani','venkatesan','software engineer']
+        let [firstname,lastname,profile]=des;//destructuring
+        console.log(firstname);
+        let [fname,lname]='ponmani venkatesan'.split(' ');
+        console.log(lname);//venkatesan
+
+        let strat=['hello','come','lets','play']
+        let [hey, ,ok]=strat;
+        console.log(ok);//skips second word
+        let[mars,...rest]=strat;
+        console.log(rest[0]);//come
+        console.log(rest[1]);//lets
+        console.log(rest[2]);//play
+
+        //object destruturing
+        let job = {
+            position:"frontend",
+            salary:"20k",
+            locations:'chennai'
+        }
+
+        let {position,salary,locations}=job;
+        console.log(position);//frontend
+        console.log(locations);//chennai
+        
+        let mahabrath={
+            first:"arjunan",
+            second:'krishna',
+            third:'karnan'
+        }
+        function truth({first,second="ponmani",third}){
+            console.log("inside funtion",second);// krishna overrides ponmani, if value for second not found
+                                                 // then it take ponmani
+        }
+        truth(mahabrath);
+    
+    </script>
+</body>
+</html>
