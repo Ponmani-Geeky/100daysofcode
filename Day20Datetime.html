@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day20</title>
+</head>
+<body>
+    <Script>
+        let date=new Date();
+        console.log(date);//prints current date and time
+
+        let ourdate=new Date("1997-08-16");
+        console.log(ourdate);// prints given date and also day with a format
+
+        console.log(date.getFullYear());//2020
+        console.log(date.getMonth()+1);// start from 0--jan ,so it prints 5 we can add 1 to it
+        console.log(date.getDate());//22
+        console.log(date.getDay());// prints 1 which is monday ,sunday is considered as 0
+
+
+        // like get we set our dates too
+        let setting=new Date(2020,9,3);
+        setting.setDate(1);//date will change to day 1 of month
+        setting.setFullYear(1997);// year will change here
+        console.log("date setting",setting);
+        console.log("get time",setting.getTime());//it will get the date in ms from 1970
+    </Script>
+</body>
+</html>
