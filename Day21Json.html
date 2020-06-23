@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let jsonobj = {
+            firstname: 'ponmani',
+            lastname: 'venkatesan',
+            profile: {
+                position: 'software eng',
+                company: 'solverminds'
+            },
+            location: 'chennai'
+
+        }
+        let sending = JSON.stringify(jsonobj);//converts normal obj to json string (type: string)
+        console.log(sending);
+        let backnorm = JSON.parse(sending);// converts json to normal object
+        console.log(backnorm);
+
+        //filter out the json
+        let againsend = JSON.stringify(jsonobj, ['firstname', 'lastname', 'profile']);
+        console.log(againsend);//first and last name and empty object profile(profile:{})
+        let againsend1 = JSON.stringify(jsonobj, ['firstname', 'lastname', 'profile', 'position', 'company']);
+        console.log(againsend1);//now everything will be printed
+        let againsend2 = JSON.stringify(jsonobj, ['firstname', 'lastname', 'profile', 'position', 'company'], 2);
+        console.log(againsend2);// i will print with proper indent(spaces---well strutured)
+
+        let schedule = `{
+               "meetups": [
+                  {"title":"Conference","date":"2017-11-30T12:00:00.000Z"},
+                  {"title":"Birthday","date":"2017-04-18T12:00:00.000Z"}
+                  ]
+                  }`;
+        schedule=JSON.parse(schedule,function(key,value){
+            if(key=='date') return new Date(value);// if we have date we can use it like this
+            return value;
+        })
+        console.log(schedule.meetups[0].date);
+
+
+    </script>
+</body>
+
+</html>
