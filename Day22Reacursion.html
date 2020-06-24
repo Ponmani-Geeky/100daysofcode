@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>day 22</title>
+</head>
+<body>
+    <script>
+        //recursion concept in javascript
+        function add(x){
+            if(x==1){// base value
+                return 1
+            }
+            return x+add(x-1);
+        }
+        console.log(add(3));//6
+
+        let startup={
+            developement:{
+                software:[{person1:"someone",salary:3000},{person2:"karthi",salary:2000}]
+            },
+            testing:{
+                 manual:[{emp1:"madhavan",salary:3000},{emp2:"yathavan",salary:2000}],
+                 automation:[{emp3:"krishna",salary:3000},{emp2:"partha",salary:2000}]
+
+            }
+        }
+
+        function salaryemp(start){
+              if(Array.isArray(start)){
+                  return start.reduce((prev,current)=>prev+current.salary,0)
+              }
+              else{
+                  let sum=0;
+              for(let sal of Object.values(start)){
+                  sum+=salaryemp(sal);//recursion happens
+              }
+              return sum;
+              }
+              
+        }
+        console.log(salaryemp(startup));//15000
+    </script>
+</body>
+</html>
