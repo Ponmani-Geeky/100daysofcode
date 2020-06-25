@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day23</title>
+</head>
+<body>
+    <script>
+        //rest operoter in the javascript
+        //holds rest of values/elements
+        function sumofarray(...sumarray){//rest operter used here
+            let sum=0;
+            for(let a of sumarray){
+                sum+=a;
+            }
+            return sum;
+        }
+        console.log(sumofarray(1,2,9));
+
+        //spread syntax
+        //unpacks the array
+    let spreaded=[1,2,3,4];
+    let gotvalue=[...spreaded];//unpacks the spreaded array to gotvalue(like copying(they holds diff reference))
+
+    let person={
+        firsname:"ponmani",
+        lastname:"venkatesan"
+    }
+    let newperson={...person};
+    newperson.location="chennai";//it wont affect the person object
+    console.log(person);
+    console.log(newperson);
+    console.log(JSON.stringify(person)===JSON.stringify(newperson));//false
+    </script>
+</body>
+</html>
