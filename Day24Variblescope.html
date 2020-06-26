@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day24</title>
+</head>
+<body>
+    <script>
+        // closure in javascript
+        //funtion which has reference to its outer funtion is called closure in javascript
+        function counter(){
+            let count=0;//it is not possible to change this count directly
+
+            return function(){
+                return count++;
+            }
+        }
+        let count =counter();//this funtion runs only one but inner funtion remembers the count value
+        console.log(count());//0
+        console.log(count());//1... goes on
+
+        function person(){
+            let firstname="ponmani";// we cant directly change the name
+            let lastname="venkatesan";
+
+            function name(){
+                   return (firstname+" "+lastname);
+            }
+            return name;
+        }
+
+        let getname=person();
+        console.log(getname());// ponmani venkatesan
+    </script>
+</body>
+</html>
