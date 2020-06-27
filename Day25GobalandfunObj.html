@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>day 25</title>
+</head>
+<body>
+    <script>
+        //gobal object
+        var name="ponmani";// it will add to gobal(window) object
+        console.log(window.name);//ponmani
+
+        let named="hello ponmani";// let will not add to gobal(window) object
+        console.log(window.named);// undefined
+
+        //In javascript funtion are objects -- action objects
+        function person(firstname){
+            return firstname;
+        }
+
+        console.log(person("ponmani"));
+        console.log(person.name);//person --- to get the funtion name
+        console.log(person.length);//1   length --- for getting number of arguments
+
+        //custom properties
+
+        function counter(){
+            counter.count++;
+            return counter.count;
+        }
+        counter.count=0;// declaration and definition outside the funtion like objects
+
+        console.log(counter());//1
+        console.log(counter());//2
+
+        //Named funtion experssion
+        let exp=function fun(hello){
+            if(hello){
+            alert(`hello ${hello}`);}
+            else{
+               // exp("ponmani");//problem with this -- error
+                fun("please");// it is not accessible outside so we can use this
+            }
+
+        }
+
+        let newexp=exp;
+        exp=null;// we can change the normal funtion outside
+        newexp();// it works fine eventhough exp is null
+
+    </script>
+</body>
+</html>
