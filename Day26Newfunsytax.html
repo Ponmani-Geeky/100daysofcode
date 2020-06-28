@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day26</title>
+</head>
+<body>
+    <script>
+        //new funtion sytax
+
+        //let func=new function([arg1,arg2,...argn],functionbody);//syntax
+
+        let funt=new Function('a','b','return a+b');//single ine function
+
+        console.log(funt(5,5));
+
+        let fun=new Function('alert("hello")');
+
+        console.log(fun());
+        
+        //it will be more usefull when get funtion body from server and run it 
+        
+    </script>
+</body>
+</html>
