@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 27</title>
+</head>
+<body>
+    <script>
+        setTimeout(() => {
+            console.log('hello after one sec')
+        }, 1000);//1 sec==1000ms
+        
+        // let count=0;
+        // let timerid=setInterval(()=>{
+        //     count++;
+        //     console.log(count);
+        //     if(count==5){
+        //         console.log('runs in interval of 1 sec')
+        //         clearInterval(timerid);
+        //     }
+            
+            
+        // },1000)
+
+        //nested settimeoutt
+
+        let c=0;
+        setTimeout(function nest(){
+            if(c<4){
+               setTimeout(nest,1000);
+            }
+                  c++;
+                console.log('nestted',c)
+        },1000)
+    </script>
+</body>
+</html>
