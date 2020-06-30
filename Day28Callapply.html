@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day28</title>
+</head>
+<body>
+    <script>
+        //Call  in javascript
+        let name={
+            firstname:'ponmani',
+            Lastname:'venkatesan',
+            Printname:function(word,profession){
+                return (`Hello ${this.firstname}  ${this.Lastname} ${word} ${profession}`);//this refers to current obj
+            }
+        }
+
+        let name2={
+            firstname:'Kamal',
+            Lastname:'Hassan',
+            //instead writing function again we are borrowing thatt funtion here
+        }
+
+        //here
+        let nameval=name.Printname.call(name2,'welcome');// we are sending this info of name2 to function--printname
+        console.log(nameval);// Hello kamal hasan welcome
+
+        //apply in js
+        let nameval1=name.Printname.apply(name2,['welcome','cinema']);//we can send parameters in array in apply
+        console.log(nameval1);//Hello kamal hasan welcome cinema
+    </script>
+</body>
+</html>
