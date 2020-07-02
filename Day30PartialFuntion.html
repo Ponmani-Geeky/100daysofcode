@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 30</title>
+</head>
+<body>
+    <script>
+        function partial(fn,...outerargs){
+            return function(...innerargs){
+                console.log('this',this);//this refers to funtion coming in
+                return fn.call(this,...outerargs,...innerargs);
+            }
+        }
+
+        let a={
+          firstname:'ponmani',
+          sayname:function(lastname,position){
+              return `${this.firstname} ${lastname} ${position}`
+          }
+        }
+         a.firstvalue=partial(a.sayname,'venkatesan');
+         console.log('hello',a.firstvalue());
+         secondvalue=a.firstvalue('software eng');
+        console.log(secondvalue);
+
+
+
+        function add(a,b,c){
+            
+             return a+b+c;
+        }
+
+        let x=add.bind(null,1,2);
+        console.log('addfuntion',x(3));
+
+
+
+    </script>
+</body>
+</html>
