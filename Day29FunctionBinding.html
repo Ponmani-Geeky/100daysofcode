@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 29</title>
+</head>
+<body>
+    <script>
+        //bind function 
+        let obj={
+            firstname:'ponmani',
+            lastname:'venkatesan',
+            Namefuntion: function(){
+                return (this.firstname+" "+this.lastname);
+            }
+
+        } 
+
+        let anotherobj=obj.Namefuntion;
+        console.log(anotherobj());//undefined undefined -- because we lossin this keyword reference here
+
+        //to fix this one
+        let someobj=obj.Namefuntion.bind(obj);//binding this keyword reference with the function itself
+        console.log(someobj());// ponmani venkatesan
+    </script>
+</body>
+</html>
