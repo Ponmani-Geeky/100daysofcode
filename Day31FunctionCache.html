@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 31</title>
+</head>
+<body>
+    <script>
+        //function level cache ---- memoization
+        function square(...x){
+            return x;
+        }
+
+        function memo(fn){
+            let cachemap=new Map();
+     
+            return function(...x)
+            {
+                let key=[...x].join('-');
+                if(cachemap.has(key))
+                {
+                    console.log('from memo');
+                    return cachemap.get(key);
+                }
+
+                let result =fn(...x);
+                cachemap.set(key,result);
+                return result;
+            };
+        }
+
+        let fastfun=memo(square);
+        console.log(fastfun(5));
+        console.log(fastfun(5));
+        console.log(fastfun(5,6,6));
+        console.log(fastfun(5,6,6));
+        console.log(fastfun(5,6,6));
+    </script>
+</body>
+</html>
