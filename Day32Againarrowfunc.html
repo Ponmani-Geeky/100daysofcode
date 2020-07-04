@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 32</title>
+</head>
+
+<body>
+    <script>
+        //arrow function dont have this keyword
+        let obj = {
+            Booktitle: "You dont know javascript",
+            student: ['ponmani', 'vinitha', 'priyadharshini'],
+
+            showstudent() {
+                this.student.forEach(student => alert(this.Booktitle + ':' + student)
+                );
+            }
+        };
+        obj.showstudent()// you dont know javacript ponmani....
+
+        function defer(f, ms) {
+            return function () {
+                setTimeout(() => f.apply(this, arguments), ms)
+            };
+        }
+            
+
+        let arr={
+         something:'have fun',
+         sayHi(who) {
+            alert('Hello, ' + who + this.something);
+        }
+        }
+
+          arr.sayHiDeferred = defer(arr.sayHi, 2000);
+        arr.sayHiDeferred("John"); // Hello, John have fun after 2 seconds
+    </script>
+</body>
+
+</html>
