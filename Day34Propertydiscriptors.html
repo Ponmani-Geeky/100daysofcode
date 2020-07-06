@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>day 34</title>
+</head>
+<body>
+    <script>
+        let obj={
+            name:'ponmani',
+            age:22,
+            state:'tamilnadu'
+        }
+
+        console.log(Object.getOwnPropertyDescriptor(obj,'name'));
+        //this will print {value:'ponmani' writable:true,enumarable:true,configurable:true}
+        // and we can change this expilicitly
+        Object.defineProperty(obj,'age',{
+            writable:false,
+            configurable:false,
+            enumerable:false
+        })
+
+        // Object.defineProperty(obj,'age',{// this will give error ,only once the defineproperty shud used
+        //     writable:true,
+        //     configurable:true
+        // })
+
+
+        obj.age=25;// this change will not get affected because configurable is false
+        obj.state= 'karnataka';
+        console.log(obj);
+
+        Object.freeze(obj);
+        obj.state='tamilnadu';//thi will not get affected beacuse we freezed the obj
+        console.log(obj);
+    </script>
+</body>
+</html>
