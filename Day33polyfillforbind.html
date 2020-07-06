@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 33</title>
+</head>
+
+<body>
+    <script>
+        let name = {
+            firstname: 'ponmani',
+            lastname: 'venkatesan'
+        }
+
+        function person(passion) {
+            let prop = `${this.firstname} ${this.lastname} ${passion} `;
+            console.log(prop);
+            return prop;
+        }
+
+        // our bind method
+        Function.prototype.mybind =  function (...args){
+            let boundedMethod = this;
+            let context = args[0];
+            let boundArgs = args.slice(1);
+
+            return function (...outerArgs) {
+               let value= boundedMethod.apply(context, [boundArgs, outerArgs]);
+               return value;
+            }
+        }
+        let funcall = person.mybind(name,'coding');
+        funcall();
+
+    </script>
+</body>
+
+</html>
