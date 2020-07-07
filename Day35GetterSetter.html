@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day35</title>
+</head>
+<body>
+    <script>
+        let obj={
+            firstname:'ponmani',
+            lastname:'venkatesan',
+
+            get fullname(){
+                return (`${this.firstname}  ${this.lastname}`);
+            },
+
+            set fullname(value){
+                [this.firstname,this.lastname]=value.split(' ');
+            }
+        }
+       
+        console.log(obj.fullname);//ponmani venkatesan --- we are not calling it as function
+        obj.fullname='Arthi venkatesan';// here we are setting fullname again
+        console.log(obj.fullname);//Arthi venkatesan
+    </script>
+</body>
+</html>
