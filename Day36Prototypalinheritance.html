@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 36</title>
+</head>
+<body>
+    <script>
+        let shape={
+            color:'blue',
+            isColor:true,
+
+            getshapecolor(){
+                return `${this.color}`
+            }
+        }
+      
+        let circle={
+            radius:'2cm',
+            getradius(){
+                return `${this.radius}`
+            },
+            
+        }
+        circle=Object.create(shape);
+        // console.log(circle.color);//blue
+
+        function AdminDb(empid,empname){
+            this.empid=empid;
+            this.empname=empname;
+        }
+        AdminDb.prototype.empdetail=function(){
+            return `Emp detail ${this.empid} ${this.empname}`;
+        }
+
+        function Freshers(empid){
+            this.empid=empid;
+        }
+        Freshers.prototype=Object.create(AdminDb.prototype);
+        Freshers.prototype.constructor=Freshers;
+        let newf=new Freshers('smeee');
+       
+        let emp1=new AdminDb('SM1007','ponmani');
+        // console.log(emp1.empdetail());
+    </script>
+</body>
+</html>
