@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 37</title>
+</head>
+<body>
+    <Script>
+        //constructor function
+        function Profile(firstname,lastname){
+            this.firstname=firstname;
+            this.lastname=lastname;
+        }
+        Profile.prototype.getdetail=function(){// this function is only one copy all the objects will refers to it
+             return `My name is ${this.firstname} ${this.lastname} from  ${this.place}`
+        }
+        
+        function Freashprofile(firstname){
+             this.firstname=firstname;
+        }
+        Freashprofile.prototype=Object.create(Profile.prototype);
+        //creating object for the construtor function
+        let candidate1=new Profile('ponmani','venkatesan');// refers to Profile.prototype
+        candidate1.place='vellore';
+        console.log(candidate1.getdetail());// My name ponmani venkatesan from vellore
+
+        let freasher=new Freashprofile('Surya');
+        let freasher2=new freasher.constructor('kamal');// it refers to profile function
+        Freashprofile.prototype.constructor=Freashprofile;// changing the constructor
+        let freasher3=new freasher.constructor('kamal');
+        console.log(freasher3);
+        freasher.lastname='sivakumar'
+        console.log(freasher)
+        console.log(freasher.getdetail());
+    </Script>
+</body>
+</html>
