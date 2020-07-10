@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day38 </title>
+</head>
+
+<body>
+    <Script>
+        //Pure function are one which gives some output for same input any number of time
+        //They dont have any side effects outside function
+
+        //Impure function
+        let arr = [1, 2, 2, 3, 4];
+
+        function arraypush(arr, element) {
+            let result = arr.push(element);
+
+            return result;
+        }
+
+        let newarr = arraypush(arr, 7);
+        console.log(arr);// [1,2,2,3,4,7] ---changed the arr which is outside
+
+
+        //pure function --- only depends on the input of function
+
+        let xarr = [1, 2, 2, 3, 4];
+
+        function arraypushes(arr, element) {
+            let result = [...arr,element]// making shallow copy of input array and do mutation
+
+            return result;
+        }
+
+        let newarr1 = arraypushes(xarr, 7);
+        console.log(xarr);// [1,2,2,3,4] ---Not changed the xarr which is outside
+    </Script>
+</body>
+
+</html>
