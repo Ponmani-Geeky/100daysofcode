@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 39</title>
+</head>
+<body>
+    <script>
+        //shallow copy
+        let shal1={
+            can1:'dhoni',
+            can2:'raina'
+        }
+        
+        let shal2=shal1; //copying objects ----shallowcopy in other words
+        shal2.can2='Ashwin';// changing element in copied object
+        console.log(shal1); //{can1:'dhoni',can2:'Ashwin'}
+
+        let shal3={...shal1}; // copying objects using spread operator--- i will create new ref in heap
+        shal3.can1='Dada';// only change the shal3
+        console.log(shal1);// No change in orginial object--- {can1:'dhoni',can2:'Ashwin'}
+
+        // deep copy
+
+        let deepco1={
+            firstname:'ponmani',
+            lastname:'venkatesan',
+            address:{
+                District:'Vellore',
+                state:'tamilnadu',
+                country:'india'
+            }
+        }
+
+        let deepco2={...deepco1};// still; it copies only firstlevel without ref , not nested one
+        deepco2.address.District='chennai';
+        console.log(deepco2.address.District);//chennai
+        console.log(deepco1.address.District);// here too chennai
+
+        let deepco3=JSON.parse(JSON.stringify(deepco1));
+         deepco3.address.District='bangalore';
+         console.log(deepco1.address.District);// chennai -- not changed because we copied deeply all the nested objs
+         
+    </script>
+</body>
+</html>
