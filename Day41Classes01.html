@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day41</title>
+</head>
+<body>
+    <script>
+        class Hrservice{
+            constructor(firsname,lastname,expirence){
+                 this.firsname=firsname;
+                 this.lastname=lastname;
+                 this.expirence=expirence;
+            }
+
+            get persondetails(){
+                return `Am ${this.firsname} ${this.lastname} i have ${this.expirence} years experience`
+            }
+
+            set name(name){
+                [this.firsname,this.lastname]=name.split(' ');
+            }
+
+            set exp(exp){
+                this.expirence=exp;
+            }
+
+        }
+
+        const can1=new Hrservice('ponmani','venkatesan','1');
+        console.log(can1.persondetails);
+        can1.name='Arthi venkatesan';
+        can1.exp='2';
+        console.log(can1.persondetails);
+    </script>
+</body>
+</html>
