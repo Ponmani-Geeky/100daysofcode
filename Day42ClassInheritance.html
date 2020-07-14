@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 42</title>
+</head>
+<body>
+    <script>
+        class User{
+            constructor(firstname,lastname,email){
+                this.firstname=firstname;
+                this.lastname=lastname;
+                this.email=email;
+            }
+
+            userdetails(){
+                  return `${this.firstname} and mail id ${this.email}`;
+            }
+
+            username(){
+                return this.firstname;
+            }
+        }
+
+        const user1=new User();
+
+        class Admin extends User{
+            constructor(firtname,lastname,email,mobile){
+                super(firtname,lastname,email);
+                this.mobile=mobile;
+            }
+
+            getmobile(){
+                return `${this.mobile}`;
+            }
+        }
+
+        const ad1=new Admin('ponmani','venkatesan','ponmani@gmail.com','933333');
+        console.log(ad1);
+    </script>
+</body>
+</html>
