@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 43</title>
+</head>
+<body>
+    <script>
+        class Iphone{
+            constructor(size,camera,color){
+                this.size=size;
+                this.camera=camera;
+                this.color=color;
+            }
+           
+           getphonedetails(model){
+                 return `Iphone${model} has ${this.size} size ,${this.camera} camera and ${this.color}`
+           }
+
+           getphonecolour(){
+               return `${this.color}`
+           }
+
+        }
+        const phone6=new Iphone('6','12mp','gold');
+        //console.log(phone6.getphonedetails('6'));
+
+        class Newiphone extends Iphone{
+            constructor(size,camera,color,facereg){
+                  super(size,camera,color);//calling the parent construtor (must use)
+                this.facereg=facereg;
+            }
+            getphonedetails(model){
+                console.log( super.getphonedetails(model));// calling parent method using super
+                 return `Iphone${model} has ${this.size} size ,${this.camera} camera and ${this.color} facereg ${this.facereg}`
+           }
+        }
+
+        const phone11=new Newiphone('7','20mp','lightblue','true');
+        console.log(phone11.getphonedetails('11'));
+        console.log(phone11.getphonecolour());// called method from parent
+    </script>
+</body>
+</html>
