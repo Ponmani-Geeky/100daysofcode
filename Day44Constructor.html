@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Day 44</title>
+</head>
+<body>
+    <script>
+        class Softwaredeveloper{
+            constructor(name,company,role){
+                this.name=name;
+                this.company=company;
+                this.role=role;
+            }
+
+            getdeveloper(){
+                return `${this.name} name ${this.company} company ${this.role}`
+            }
+        }
+
+        class Frontenddeveloper extends Softwaredeveloper{
+                      //automatically construtor and super created internally parent is called
+        }
+        let fdeveloper=new Frontenddeveloper('ponmani','solverminds','frontend');
+        console.log(fdeveloper);
+        console.log(fdeveloper.getdeveloper());
+
+        class Softwaredeveloper1{
+            constructor(name,company,role){
+                this.name=name;
+                this.company=company;
+                this.role=role;
+            }
+
+            getdeveloper(){
+                return `${this.name} name ${this.company} company ${this.role}`
+            }
+        }
+
+        class Frontenddeveloper1 extends Softwaredeveloper{
+         constructor(name,company,role,branch){//manually creating the constructor and adding extra
+                          super(name,company,role);
+                          this.branch=branch;
+                      }
+        }
+        let fdeveloper1=new Frontenddeveloper1('ponmani','solverminds','frontend','chennai');
+        console.log(fdeveloper1);
+        console.log(fdeveloper1.getdeveloper());
+    </script>
+</body>
+</html>
