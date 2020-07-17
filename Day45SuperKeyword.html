@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day45</title>
+</head>
+<body>
+    <script>
+        //super keyword
+        let animal={
+            name:'animal',
+            eat:function(){
+                console.log('name of eating one is',this.name)
+            }
+        }
+
+        let cat={
+            __proto__:animal,
+            eat(){
+                this.__proto__.eat.call(this);// error this keyword point this again again
+            }
+        }
+
+        let dog={
+            __proto__:cat,
+            eat(){
+                this.__proto__.eat.call(this);
+            }
+        }
+        // console.log(dog.eat());
+
+        // using super keyword
+
+        let animal1={
+            name:'animal',
+            eat:function(){
+                console.log('name of eating one is',this.name)
+            }
+        }
+
+        let cat1={
+            __proto__:animal1,
+            eat(){
+                super.eat(); //it will homeobject so this wont get confused
+            }
+        }
+
+        let dog1={
+            __proto__:cat1,
+            eat(){
+                super.eat();
+            }
+        }
+
+        console.log(dog1.eat());
+    </script>
+</body>
+</html>
