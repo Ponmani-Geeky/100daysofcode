@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 47 </title>
+</head>
+<body>
+    <script>
+        const _name=Symbol();
+        const _place=new WeakMap();
+        class Privateprops{
+            constructor(name){
+                this[_name]=name;// private variable
+                _place.set(this,function(){
+                    console.log('conssss of props',this); // this is undefined
+                })
+            }
+
+            getname(){
+                console.log('name conssss',_place.get(this)());       
+                console.log(`my name is ${this[_name]}`);
+                console.log('name function',this);           
+         }
+        }
+
+        const name1 = new Privateprops('ponmani');
+        console.log(name1.getname());// my name is ponmani
+        console.log(this[_name]);// we can get the access for name because its private
+    </script>
+</body>
+</html>
