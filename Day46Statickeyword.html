@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 46</title>
+</head>
+<body>
+    <script>
+        //static keyword
+        class Animal{
+            static place='india';
+            constructor(food){
+                this.food=food;
+            }
+
+            static eat(food){
+                console.log('Animal is eating',food);
+            }
+        }
+
+        class Cat extends Animal{
+            constructor(food){
+                super(food);
+            }
+        }
+
+        const c1=new Cat();
+        console.log(Cat.eat('food'));// static properties should called with class only not with instance
+
+        console.log(Cat.__proto__==Animal);// true
+        console.log(Cat.prototype.__proto__==Animal.prototype);//true
+    </script>
+</body>
+</html>
