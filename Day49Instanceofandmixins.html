@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 49</title>
+</head>
+<body>
+    <script>
+        //instanceof
+        class Person{
+            constructor(name){
+                this.name=name;
+            }
+        }
+
+        const p1=new Person();
+        console.log(p1 instanceof Person);//true    // to check the instance belongs to which class
+        
+        let arr=[];
+        console.log(arr instanceof Array);// true
+
+        //mixins
+
+        let animal={
+            name:'dog',
+            place:'india',
+            getanimalname(name){
+                console.log('inside the name',name);
+            }
+        }
+
+        class Animal{
+            constructor(name){
+                this.name=name;
+            }
+        }
+
+        Object.assign(Animal.prototype,animal);
+        const a1=new Animal('cat');
+        console.log(a1.getanimalname('cat'));
+    </script>
+</body>
+</html>
