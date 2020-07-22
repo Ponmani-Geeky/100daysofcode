@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 50</title>
+</head>
+<body>
+    <script>
+        // runtime errors only handled by try catch block
+        try{
+             const name='ponmani';
+             name="arthi";
+        }
+        catch(err){
+            console.log(err);
+            console.log(err.name);// type error
+            console.log(err.message);// assignment to the constant varible
+        }
+        finally{
+            console.log('code has been ended'); // it will run irrespective of error
+        }
+
+        // try catch runs synchoronusly
+        try{
+            setTimeout(()=>nosuchvarible,1000);// this will be considered has a uncaught
+        }
+        catch{
+            console.log('this wont work here')
+        }
+
+        // we can solve that using promise
+        try{
+            new Promise(resolve,reject)
+            {
+            setTimeout(()=>reject(nosuchvarible),1000);// this will be considered has a uncaught
+            }
+        }
+        catch{
+            console.log('this will work here because of promise')
+        }
+
+        class Validationerror extends Error{
+            constructor(message){
+                super(message)
+                this.name='validationerror';
+            }
+        }
+
+        function test(){
+            throw new Validationerror('validation error occurs please check');
+        }
+
+        try{
+            test();
+        }
+        catch(err){
+           console.log(err.name);
+           console.log(err.message);
+           console.log(err.stack);
+        }
+    </script>
+</body>
+</html>
