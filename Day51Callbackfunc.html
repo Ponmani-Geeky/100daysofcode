@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 51</title>
+</head>
+<body>
+    <script>
+        function higher(note,callback){// higher order function taking callback function as a input
+            let name='ponmani';
+            callback('ponmani');
+        }
+
+        higher('welcome',function(name){
+             console.log(name); 
+      })
+
+      function Firstname(firsname,callback)// callback hell
+      {
+          console.log('inside the firstname');
+          callback(firsname,thirdname);
+      }
+
+      function secondname(secondname,callback){
+          console.log('inside the secondname');
+          callback(secondname);
+      }
+   
+      function thirdname(thirdname){
+          console.log('inside the thirdname',thirdname);
+      }
+
+
+      Firstname('ponmani',secondname);
+  
+  
+    </script>
+</body>
+</html>
