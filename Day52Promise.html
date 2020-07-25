@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 52</title>
+</head>
+<body>
+<script>
+    // on success
+    let promise=new Promise((resolve,reject)=>{
+            resolve('ponmani');
+        })
+
+    promise.then((result)=>{
+          console.log(result);// ponmani
+    })
+
+    // on rejected
+    let promise1=new Promise((resolve,reject)=>{
+        reject(new Error('whoops ,its rejected'));
+        })
+
+    promise1.catch((err)=>{
+          console.log(err);// error ---- whoops, its rejected
+    })
+
+    // promise channing
+    new Promise((resolve,reject)=>{
+        resolve('ponmani');
+    }).then((name)=>{
+         return name
+    }).then((name)=>{
+        return name+' '+'ponmanigmail.com';
+    }).then((userdetails)=>{
+        console.log(userdetails);// ponmani ponmanigmail.com
+    })
+</script>
+</body>
+</html>
