@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day53</title>
+</head>
+<body>
+    <script>
+        // Gobal error handling
+        window.addEventListener('unhandledrejection',function(event){ // if anything unhandled this will be triggered
+            console.log(event.promise);
+            console.log(event.reason);
+        })
+
+        new Promise(()=>{
+            throw new Error("this is unhandled error mr/mrs developer");
+        })
+
+        //Promise.all
+        Promise.all([
+            new Promise((resolve)=>{ resolve('ponmani')}),
+            new Promise((resolve)=>{ resolve('venkatesan')}),
+            new Promise((resolve)=>{ resolve('vellore')})
+
+        ]).then((result)=>{
+            console.log(result);// array as a result [ponmani,venkatesan,vellore]
+        })
+
+        //Promise.race
+        Promise.race([
+            new Promise((resolve)=>{setTimeout(()=>resolve('ponmani'),2000)}),
+            new Promise((resolve)=>{ resolve('venkatesan')}),
+            new Promise((resolve)=>{ resolve('vellore')})
+
+        ]).then((result)=>{
+            console.log(result);// venkatesan
+        })
+
+        //promise.settled
+        Promise.allSettled([
+            new Promise((resolve)=>{setTimeout(()=>resolve('ponmani'),2000)}),
+            new Promise((reject)=>{ reject(new Error('whoops!'))}),
+            new Promise((resolve)=>{ resolve('vellore')})
+
+        ]).then((result)=>{
+            console.log(result);// venkatesan
+        })
+
+        // Asyn and await
+         (async function waiting(){
+            let name =new Promise((resolve,reject)=>{
+                setTimeout (()=>resolve('ponmani'),2000);
+            })
+            let myname=await name;
+            console.log(myname);
+            console.log('end');
+            
+        })()
+    </script>
+</body>
+</html>
