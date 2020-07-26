@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 54</title>
+</head>
+<body>
+    <Script>
+        //genertor function
+        function *gene(){
+          yield 'ponmani'
+          yield 'venkatesan'
+          yield 'vellore'
+        }
+
+        let g= gene();
+        console.log(g.next());//{value:ponmani,done:false}
+        console.log(g.next());//{value:venkatesan,done:false}
+        console.log(g.next());//{value:vellore,done:false}
+        console.log(g.next());//{value:undefined,done:true}
+           
+        for(let a of gene()){
+            console.log(a);
+        }
+
+        // infinite loop using while loop
+
+        function *loop(){
+            let i=0;
+
+            while(true){
+                yield i++;
+            }
+        }
+
+        let l= loop();
+        console.log(l.next());// 0
+        console.log(l.next());// 1 each time value will increase
+    </Script>
+</body>
+</html>
