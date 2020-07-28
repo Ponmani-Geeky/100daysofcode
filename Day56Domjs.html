@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 56</title>
+</head>
+<body>
+    <div>
+        <ol>
+            <li>Java</li>
+            <li>JavaScript</li>
+            <li>Python</li>
+        </ol>
+    </div>
+    <div>
+        Hello ,am ponmani
+    </div>
+    <script>
+         for(let i=0;i<document.body.children.length;i++){
+             console.log(document.body.children[i]);// it will print all the elements inside the body
+         }
+
+         console.log('firstelement child',document.body.firstElementChild);// will print first (div element)
+         console.log('lastelement child',document.body.lastElementChild);// i will print last (Script element)
+    
+    // accessing the python element
+    console.log(document.body.firstElementChild.firstElementChild.lastElementChild)// <li>Python</li>
+    console.log(document.body.firstElementChild.nextElementSibling.previousElementSibling);//first div
+    console.log(document.location.href);// current website link will be printed
+    </script>
+</body>
+</html>
