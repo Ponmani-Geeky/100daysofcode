@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 57</title>
+</head>
+<body>
+    <div id='movielist'>
+        <ol>
+            <li> Asuran</li>
+            <li> Kaithi</li>
+            <li> Soorarai Pootru</li>
+            <li> Master</li>
+        </ol>
+    </div>
+    <script>
+        movieelem=document.getElementById('movielist');
+        console.log(movieelem);// we will get the movielist element here
+        movieelem.style.background='lightgreen'// changing the background for the same
+
+        //getting first movie
+        fmovie=document.querySelectorAll('ol > li');
+        for(let m of fmovie){
+            //alert(m.innerHTML);// all the movie list will be come here
+        }
+
+        //again getting movie list
+        ffmovie=document.getElementsByTagName('li');
+        for(let n of ffmovie){
+            console.log(n);// all the li elements will come here
+        }
+    </script>
+</body>
+</html>
