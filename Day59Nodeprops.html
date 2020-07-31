@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 59</title>
+</head>
+<body>
+    props
+    <div>
+        Node props are bit difficult
+        <ul>
+            <li hidden>Monday</li>
+            <li>Tuesday</li>
+            <li>wednesday</li>
+            <li>thursday</li>
+            <li>friday</li>
+            <li>Happyday</li>
+            <li>wonderfullday</li>
+        </ul>
+    </div>
+    <script>
+           let felem=document.body.firstElementChild;
+           console.log(felem);//div element
+           console.log(felem.nodeType);//for elements nodetype is 1
+           console.log(felem.firstElementChild.nodeType);
+           console.log(felem.firstChild.nodeType);// for text nodes nodetype is 3
+           console.log(felem.firstChild);//Node props are bit difficult
+           console.log(document.nodeType);// for document nodetype is 9
+           console.log('tagname',felem.tagName);//DIV
+
+           let text=document.body.firstChild;
+           console.log(text);//props
+           console.log(text.tagName);//undefined tagName applicable only for elements not for text
+           console.log(text.nodeName);//#text
+
+           // reading innerHTML
+           console.log('innerhtml',document.body.firstElementChild.firstElementChild.firstElementChild.innerHTML);
+           let changeday=document.body.firstElementChild.firstElementChild.firstElementChild.innerHTML;
+           document.body.firstElementChild.firstElementChild.firstElementChild.innerHTML='sadday';
+           console.log('innerhtml2222',document.body.firstElementChild.firstElementChild.firstElementChild.innerHTML);
+           //upper console will print 'sadday'
+
+           
+           //outerhtml
+           //console.log('outerhtml',document.body.outerHTML);
+           //document.body.outerHTML='<p>Total code vanishes</p>';// it excutes and replaces the dom 
+           console.log('outerhtml22',document.body.outerHTML);//totall dom is changed
+
+           //textContent
+           let divs=document.body.querySelector('div');
+           console.log('textcontenrt',divs.textContent);//all the text content inside the div will printed
+         
+           //hiddenproperty
+           document.body.firstElementChild.hidden=true;// we can hide elements using hidden 
+    </script>
+</body>
+</html>
