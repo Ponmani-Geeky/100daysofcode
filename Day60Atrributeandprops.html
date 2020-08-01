@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 60</title>
+</head>
+<body>
+    <!-- adding custom attributes to html elements -->
+    <div id="name" myname="ponmani"></div>
+    <!-- setting the custom attributes without affecting -->
+    <div id='actor' data-name='surya'></div>
+
+    <input><br>
+    <br>
+    <input id='check' type="checkbox" checked>
+    <a id='link' href="#morning">Good Morning</a>
+    <script>
+        elem=document.getElementById('name');
+        console.log(elem.getAttribute('myname'));//ponmani
+       // alert(elem.getAttribute('myname'));//ponmani
+        elem.setAttribute('age','25');
+        //alert(elem.getAttribute('age'));
+
+        for(let a of elem.attributes){
+            console.log('for-loop',a);// all the attributes will printed(id=name,myname=ponmani........)
+        }
+
+        //Getting the custom attributes without affecting
+        console.log(actor.dataset.name);// surya
+
+        //input element
+        console.log(check.getAttribute('checked'));// empty, 'because it is not string'
+        console.log(check.checked);// true
+
+        //link element
+        console.log(link.getAttribute('href'));// it will get exactly as attribute value
+        console.log(link.href);// it will print as dom object(http://127.0.0.1:5501/Day60Atrributeandprops.html#morning)
+    
+        //input
+        let input=document.querySelector('input');
+        console.log(input);
+        input.setAttribute('id','name');
+        console.log(input.getAttribute('id'));//name
+        input.setAttribute('value','ponmani');
+        console.log(input.value);
+
+        //property
+        input.value='arthi';
+        console.log(input.getAttribute('value'));// it is not updated 'ponmani'
+        console.log(input.value);//updated  'arthi'
+    </script>
+</body>
+</html>
