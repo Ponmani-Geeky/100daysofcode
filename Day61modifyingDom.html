@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 61</title>
+</head>
+<body>
+    <ol id='ol'>
+        <li>1st price</li>
+        <li>2nd price</li>
+        <li>3rd price</li>
+        <li id='li'>4th price</li>
+    </ol>
+
+    <div id='divelement'>
+        
+        <p>content element</p>
+        
+    </div>
+
+    <script>
+      let div=document.createElement('div'); // creating div element
+      div.innerHTML="<h1>Hello Am Software developer</h1>";// adding element inside a div
+      document.body.append(div);// appending div element inside body
+
+      // adding element before ol 
+      ol.before('sports day inaguration');
+      let li1=document.createElement('li');
+      li1.innerHTML='Distribution starts';
+      ol.prepend(li1);
+
+      let li2=document.createElement('li');
+      li2.innerHTML='Distribution ends';
+      ol.append(li2);
+      ol.after('sports day ends');
+
+      //removing elements
+       let ool=document.getElementById('ol');
+       ool.lastElementChild.remove()// this will remove 'distribution ends'
+
+       // adding real html directly
+      divelement.insertAdjacentHTML('beforebegin','<p>Welcome</p>');
+      divelement.insertAdjacentHTML('afterbegin','<p>glad you are here</p>');
+      divelement.insertAdjacentHTML('beforeend','<p>end</p>');
+      divelement.insertAdjacentHTML('afterend','<p>thanks</p>');
+
+      //cloning node
+      let div2=divelement.cloneNode(true);
+      console.log('clone',div2);
+      div2.querySelector('p').innerHTML='bye bye';
+
+      document.body.append(div2);// it will change 'glad you are here' to 'bye bye'
+
+    </script>
+</body>
+</html>
