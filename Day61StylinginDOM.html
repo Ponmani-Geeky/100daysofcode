@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day61</title>
+
+    <style>
+        .mainpage{
+            margin:100px;
+        }
+    </style>
+</head>
+<body>
+    <div id='div' class='mainpage'>Hello, lets start styling</div>
+
+    <div id='secdiv' style="background-color: aqua; margin: 20px;">Welcome, we will have fun</div>
+
+
+    <script>
+        console.log(document.body.firstElementChild.className);//mainpage
+
+        let div=document.getElementById('div');
+        div.classList.add('signup-page');
+        console.log(div.style.margin);// empty
+
+        for(let a of div.classList){
+            console.log('classList',a);//mainpage sigup-page
+        }
+
+        div.classList.remove('signup-page');//signup-page removed
+        console.log(document.body.firstElementChild.className);//mainpage
+        div.classList.toggle('signup-page');// adds a class if it doesnt exist else removes it
+
+        let second=document.getElementById('secdiv');
+        second.style.backgroundColor='blue';
+
+        
+        //computedstyle
+        // how to read the values inside the styletag
+        let computedStyle = getComputedStyle(document.body.firstElementChild);
+        alert(computedStyle.margin);
+    </script>
+</body>
+</html>
