@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Day 63</title>
+    <style>
+        #example {
+          width: 300px;
+          height: 200px;
+          border: 25px solid #E8C48F;
+          padding: 20px;
+          overflow: auto;
+        }
+      </style>
+</head>
+<body>
+    <main style="position: relative" id="main">
+        <article>
+            <div id="example" style="position: absolute; left: 180px; top: 180px">
+                E.V. Ramasamy joined the Indian National Congress in 1919, <br>
+                but resigned in 1925 when he felt that the party was only serving the interests of <br>
+                the interests of Brahmins.He questioned the subjugation of non-Brahmin  <br>
+                Dravidians as Brahmins enjoyed gifts and donations from non-Brahmins but <br>
+                opposed and discriminated against non-Brahmins in cultural and religious matters.  <br>
+                In 1924, E.V. Ramasamy participated in non-violent agitation (satyagraha)  <br>
+                in Vaikom, Kerala. From 1929 to 1932 Ramasamy made a tour of British <br>
+                Malaya, Europe, and Russia which influenced him. <br>
+
+                E.V. Ramasamy joined the Indian National Congress in 1919, <br>
+                but resigned in 1925 when he felt that the party was only serving the interests of <br>
+                the interests of Brahmins.He questioned the subjugation of non-Brahmin  <br>
+                Dravidians as Brahmins enjoyed gifts and donations from non-Brahmins but <br>
+                opposed and discriminated against non-Brahmins in cultural and religious matters.  <br>
+                In 1924, E.V. Ramasamy participated in non-violent agitation (satyagraha)  <br>
+                in Vaikom, Kerala. From 1929 to 1932 Ramasamy made a tour of British <br>
+                Malaya, Europe, and Russia which influenced him. <br>
+
+                E.V. Ramasamy joined the Indian National Congress in 1919, <br>
+                but resigned in 1925 when he felt that the party was only serving the interests of <br>
+                the interests of Brahmins.He questioned the subjugation of non-Brahmin  <br>
+                Dravidians as Brahmins enjoyed gifts and donations from non-Brahmins but <br>
+                opposed and discriminated against non-Brahmins in cultural and religious matters.  <br>
+                In 1924, E.V. Ramasamy participated in non-violent agitation (satyagraha)  <br>
+                in Vaikom, Kerala. From 1929 to 1932 Ramasamy made a tour of British <br>
+                Malaya, Europe, and Russia which influenced him. <br>
+            </div>
+        </article>
+        </main>
+
+        <script>
+            console.log(example.offsetParent.id);//main
+            console.log(example.offsetWidth);//390 // width =300+ padding=40+ border=50= 390
+            console.log(example.scrollTop);//0
+            console.log(example.clientWidth)//323 // width(300)+padding(40)-scrollbar(17)
+            console.log(example.clientHeight)//240  //height(200)+paddind(40)
+            console.log(example.scrollHeight)
+        </script>
+</body>
+</html>
