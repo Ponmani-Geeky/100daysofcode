@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 64</title>
+</head>
+<body>
+    <main  id="main">
+        <article>
+            <div id="example">
+                E.V. Ramasamy joined the Indian National Congress in 1919, <br>
+                but resigned in 1925 when he felt that the party was only serving the interests of <br>
+                the interests of Brahmins.He questioned the subjugation of non-Brahmin  <br>
+                Dravidians as Brahmins enjoyed gifts and donations from non-Brahmins but <br>
+                opposed and discriminated against non-Brahmins in cultural and religious matters.  <br>
+                In 1924, E.V. Ramasamy participated in non-violent agitation (satyagraha)  <br>
+                in Vaikom, Kerala. From 1929 to 1932 Ramasamy made a tour of British <br>
+                Malaya, Europe, and Russia which influenced him. <br>
+
+                <button onclick="btnclick()">Click to scrollup</button>
+
+                E.V. Ramasamy joined the Indian National Congress in 1919, <br>
+                but resigned in 1925 when he felt that the party was only serving the interests of <br>
+                the interests of Brahmins.He questioned the subjugation of non-Brahmin  <br>
+                Dravidians as Brahmins enjoyed gifts and donations from non-Brahmins but <br>
+                opposed and discriminated against non-Brahmins in cultural and religious matters.  <br>
+                In 1924, E.V. Ramasamy participated in non-violent agitation (satyagraha)  <br>
+                in Vaikom, Kerala. From 1929 to 1932 Ramasamy made a tour of British <br>
+                Malaya, Europe, and Russia which influenced him. <br>
+
+                E.V. Ramasamy joined the Indian National Congress in 1919, <br>
+                but resigned in 1925 when he felt that the party was only serving the interests of <br>
+                the interests of Brahmins.He questioned the subjugation of non-Brahmin  <br>
+                Dravidians as Brahmins enjoyed gifts and donations from non-Brahmins but <br>
+                opposed and discriminated against non-Brahmins in cultural and religious matters.  <br>
+                In 1924, E.V. Ramasamy participated in non-violent agitation (satyagraha)  <br>
+                in Vaikom, Kerala. From 1929 to 1932 Ramasamy made a tour of British <br>
+                Malaya, Europe, and Russia which influenced him. <br>
+                
+                <button onclick="btnup()">Click to first</button>
+                E.V. Ramasamy joined the Indian National Congress in 1919, <br>
+                but resigned in 1925 when he felt that the party was only serving the interests of <br>
+                the interests of Brahmins.He questioned the subjugation of non-Brahmin  <br>
+                Dravidians as Brahmins enjoyed gifts and donations from non-Brahmins but <br>
+                opposed and discriminated against non-Brahmins in cultural and religious matters.  <br>
+                In 1924, E.V. Ramasamy participated in non-violent agitation (satyagraha)  <br>
+                in Vaikom, Kerala. From 1929 to 1932 Ramasamy made a tour of British <br>
+                Malaya, Europe, and Russia which influenced him. <br>
+
+                E.V. Ramasamy joined the Indian National Congress in 1919, <br>
+                but resigned in 1925 when he felt that the party was only serving the interests of <br>
+                the interests of Brahmins.He questioned the subjugation of non-Brahmin  <br>
+                Dravidians as Brahmins enjoyed gifts and donations from non-Brahmins but <br>
+                opposed and discriminated against non-Brahmins in cultural and religious matters.  <br>
+                In 1924, E.V. Ramasamy participated in non-violent agitation (satyagraha)  <br>
+                in Vaikom, Kerala. From 1929 to 1932 Ramasamy made a tour of British <br>
+                Malaya, Europe, and Russia which influenced him. <br>
+            </div>
+        </article>
+       
+    </main>
+    <script>
+        console.log(window.innerWidth);
+        console.log(document.documentElement.clientWidth);
+
+        let scrollHeight = Math.max(
+  document.body.scrollHeight, document.documentElement.scrollHeight,
+  document.body.offsetHeight, document.documentElement.offsetHeight,
+  document.body.clientHeight, document.documentElement.clientHeight
+);
+
+alert('Full document height, with scrolled out part: ' + scrollHeight);
+
+// to get the current scroll position
+
+console.log('Xscroll',window.pageXOffset);// from left
+console.log('Yscroll',window.pageYOffset);// from top
+
+//window.scrollBy(pageX,pageY)
+   function btnclick(){
+         window.scrollBy(0,10);
+   }
+
+//
+function btnup(){
+    console.log('first')
+    window.scrollTo(0,0);
+}
+    </script>
+</body>
+</html>
