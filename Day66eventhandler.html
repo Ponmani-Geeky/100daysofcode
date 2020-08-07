@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 66</title>
+</head>
+<body>
+    <input id='in' onclick="alert('click')">
+    <button id="button" onclick="code()">start coding</button>
+    <input id='put' >
+    <button id='somebtn' onclick="alert(this.innerHTML)">AM button</button>
+    <input id='listen'>
+    <input type='button' id='btntype' value="event">
+    <script>
+          function code(){// i will be called when button clicked
+              alert('welcome to start coding')
+          }
+    put.onclick=function good(){// putting handlers in javasctript
+        alert('good morning')
+    }
+
+    //event listener
+    function hander(){
+        alert('am listening to you man')
+    }
+    listen.addEventListener("click",hander);// adding funtion using eventlistener
+    listen.removeEventListener('click',hander);// we have removed the eventListener
+
+    //Domcontentloaded
+    document.addEventListener('DOMContentLoaded',function(){
+        alert('dombuilt');
+    })
+
+    //eventobject
+    btntype.onclick=function(event){
+        alert(event.type+':'+event.target.value);
+    }
+    </script>
+</body>
+</html>
