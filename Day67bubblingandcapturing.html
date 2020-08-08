@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Day 67</title>
+    <style>
+        div{
+            min-width: 10px;
+            min-height: 10px;
+            border: 1px solid black;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="grantparent">
+        <div id="parent">
+            <div id="child">
+
+            </div>
+        </div>
+    </div>
+    <script>
+        //bubbling
+       document.querySelector('#grantparent').addEventListener('click',()=>{
+           console.log('grandparent called');//called last
+       })
+
+       document.querySelector('#parent').addEventListener('click',()=>{
+           console.log('parent called');//called second
+       })
+
+       document.querySelector('#child').addEventListener('click',()=>{
+           console.log('child called');//called first
+       })
+
+       //capturing
+       document.querySelector('#grantparent').addEventListener('click',()=>{
+           console.log('grandparent called');//called first
+       },true)
+
+       document.querySelector('#parent').addEventListener('click',(event)=>{
+           console.log('parent called');//called second
+            event.stopPropagation();// this will stop the capturing
+       },true)
+
+       document.querySelector('#child').addEventListener('click',()=>{
+           console.log('child called');//called last
+       },true)
+    </script>
+</body>
+</html>
