@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 68 </title>
+</head>
+<body>
+    <ul id='category'>
+        <li id='laptop'>Laptops</li>
+        <li id='mobile'>mobiles</li>
+        <li id='books'>books</li>
+    </ul>
+    <script>
+        //event delegation
+       document.querySelector('#category').addEventListener('click',(event)=>{
+               console.log(event.target.id);
+               if(event.target.tagName =='LI'){
+                   window.location.href='/'+event.target.id;
+               }
+       })
+    </script>
+</body>
+</html>
