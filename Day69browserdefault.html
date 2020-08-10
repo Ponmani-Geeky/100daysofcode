@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 69</title>
+</head>
+<body>
+    <button id='elem'>Context menu button</button>
+    <script>
+       elem.oncontextmenu=function(event){
+           event.preventDefault();// default action will be prevented by this
+           alert('default action prevented')// overrided by this
+       }
+    </script>
+</body>
+</html>
