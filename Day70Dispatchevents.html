@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 70</title>
+</head>
+<body>
+    <h1 id='code'>Click me to start coding</h1>
+
+    <h1 id='coded'>Click me to start coding today</h1>
+    <script>
+        code.addEventListener('code',(event)=>{// adding our own event
+            alert('coding started'+ " "+event.target.tagName);
+        })
+
+        let event=new Event('code');
+
+        code.dispatchEvent(event);
+
+        // custom event
+        coded.addEventListener('mycode',(event)=>{
+            alert('please start working on personal projects');
+        })
+
+        let event1=new CustomEvent('mycode',{detail:{name:"ponmani"}})
+        coded.dispatchEvent(event1);
+    </script>
+</body>
+</html>
