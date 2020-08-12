@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 71</title>
+</head>
+<body>
+    <button id="elem">Alt+click button</button>
+    <div oncopy="alert('copyprevented');return false"> 
+        Hello, this content very secrete dont share with anyone
+    </div>
+    <script>
+      elem.onclick=function(Event){
+          if(event.altKey && event.shiftKey){
+              alert('alt key and shift key pressed')
+          }
+      }
+
+      elem.onmousemove=function(event){//mouse over
+          alert('onmousemove pressed');
+      }
+    </script>
+</body>
+</html>
