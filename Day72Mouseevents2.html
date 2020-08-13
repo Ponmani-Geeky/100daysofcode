@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 72</title>
+</head>
+<body>
+    <div id="parentelem">
+        Hey child , have a happy life
+        <div id="childelem">
+               Thank you parent , you too have fun
+        </div>
+    </div>
+    <script>
+       parentelem.onmouseover=function(Event){
+           console.log('parentelem onmouseover',event.target.tagName);//where it is now
+           console.log('parentelemreleated onmouseover',event.relatedTarget.tagName);//where it is came from
+       }
+       parentelem.onmouseout=function(event){
+        console.log('parentelem onmouseout',event.target.tagName);//where it came from
+           console.log('parentelemreleated onmouseout',event.relatedTarget.tagName);//where it is now
+       }
+    childelem.onmouseenter=function(event){
+        console.log('child mouseenter',event.target.tagName);
+        console.log('childrelated onmouseenter',event.relatedTarget.tagName);
+    }
+
+    childelem.onmouseleave=function(event){
+        console.log('child leave',event.target.tagName);
+        console.log('childrelated leave',event.relatedTarget.tagName);
+    }
+     
+    </script>
+</body>
+</html>
