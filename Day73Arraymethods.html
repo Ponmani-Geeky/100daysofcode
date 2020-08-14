@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 73</title>
+</head>
+<body>
+    <script>
+        const shoppingcart=[
+            {name:'pizza',price:25},
+            {name:'burger',price:35},
+            {name:'chesse cake',price:45}
+        ]
+    //1.Some();
+    const someitem=shoppingcart.some((item)=>{
+        return item.price<=25
+    })
+    console.log('some',someitem);//true
+
+    //2.Find();
+    const find=shoppingcart.find((item)=>{
+        return item.name==='burger'
+    })
+    console.log('find',find);
+
+    //3.filter();
+    const filter=shoppingcart.filter((item)=>{
+        return item.price<=35
+    })
+    console.log('filter',filter);
+
+    //4.Every();
+    const every=shoppingcart.every((item)=>{
+        return item.price>=55
+    })
+    console.log('every',every);//false
+    </script>
+</body>
+</html>
