@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 74</title>
+</head>
+<body>
+    <script>
+        class Stack{
+            constructor(){
+                this.items=[];
+                this.count=0;
+            }
+
+            push(element){
+              this.items[this.count++]=element;
+              console.log('pushed values',this.items);
+            }
+
+            pop(){
+                this.count-=1;
+            }
+
+            peek(){
+                return this.items[this.count-1];
+            }
+        }
+
+        const s=new Stack();
+        s.push(100);
+        s.pop();
+        s.push(200);
+        console.log(s.peek());
+        
+    </script>
+</body>
+</html>
