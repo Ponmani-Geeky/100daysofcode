@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 75</title>
+</head>
+<body>
+
+    <form name='headform'>
+        <input name='elem1' value='one'>
+        <input name='elem2' value='two'>
+    </form>
+
+    <form>
+        <input type="radio" name="age" value="10">
+        <input type="radio" name="age" value="20">
+
+        <select id="select">
+            <option value="apple">Apple</option>
+            <option value="pear">Pear</option>
+            <option value="banana">Banana</option>
+          </select>
+      </form>
+    <script>
+         console.log(document.forms.headform);// total form
+         let form=document.forms.headform;
+         let elem1=form.elements.elem1;
+         console.log(elem1.value);//one
+         
+         //printing second form
+         console.log(document.forms[1]);
+         let form2=document.forms[1];
+         let radio=form2.elements.age;
+         console.log(radio[1]);
+
+         //select element
+         console.log(select.options);
+         alert(select.value);
+    </script>
+</body>
+</html>
