@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day76</title>
+    <style>
+        .invalid { border-color: red; }
+        #error { color: red }
+      </style>
+</head>
+<body>
+    Your mailid: <input type='email' id='mail'>
+    <span id='error'></span>
+    <Script>
+       mail.onblur=function(){
+           if(!mail.value.includes('@')){
+               mail.classList.add('invalid');
+               error.innerHTML='please enter the valid mail address'
+           }
+       }
+
+       mail.onfocus=function(){
+           if(this.classList.contains('invalid')){
+           mail.classList.remove('invalid');
+           error.innerHTML='';
+           }
+       }
+    </Script>
+</body>
+</html>
