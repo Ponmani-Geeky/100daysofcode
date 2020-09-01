@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 84</title>
+</head>
+<body>
+    
+    <script>
+        const user=localStorage.setItem("name",'ponmani');
+        const getuser=localStorage.getItem('name');
+        localStorage.removeItem('name')// removes particular element
+        localStorage.clear();// removes all the locastroage values
+        console.log(getuser);
+
+        //storing object in localstroage
+        const work={'company':'solverminds'};
+        const office=localStorage.setItem("companyname",JSON.stringify(work));
+        const getofc=JSON.parse(localStorage.getItem("companyname"));
+        console.log(getofc);
+    </script>
+</body>
+</html>
