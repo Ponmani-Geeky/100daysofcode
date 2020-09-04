@@ -1,0 +1,53 @@
+window.addEventListener('load',()=>{
+    let long;
+    let lat;
+    let temperatureDescription =document.querySelector('.temperature-description');
+    let temperatureDegree=document.querySelector('.temperature-degree');
+    let locationTimezone=document.querySelector('.location-timezone');
+    let temperatureSection=document.querySelector('.temperature');
+    let temperatureSpan=document.querySelector('.temperature span');
+
+
+    if(navigator.geolocation){
+        navigator.geolocation.getCurrentPosition(position=>{
+            long=position.coords.longitude;
+            lat=position.coords.latitude;
+            const proxy = `https://cors-anywhere.herokuapp.com/`;
+        const api=`${proxy}https://api.darksky.net/forecast/d2003577803f973616e0f4f6fa5ebd88/${lat},${long}`
+        fetch(api)
+          .then(response=>{
+              return response.json();
+          })
+          .then(data=>{
+              console.log(data);
+              const { temperature , summary ,icon}=data.currently;
+              temperatureDegree.textContent=temperature;
+              temperatureDescription.textContent=summary;
+              locationTimezone.textContent=data.timezone;
+
+              //formula for conversion
+              let celcius=(temperature-32)*(5/9);
+              setIcons(icon,document.querySelector('.icon'));
+
+
+              //conversion
+              temperatureSection.addEventListener('click',function(){
+                if(temperatureSpan.textContent==="F"){
+                    temperatureSpan.textContent="C";
+                    temperatureDegree.textContent=Math.floor(celcius);
+                }else{
+                    temperatureSpan.textContent="F";
+                    temperatureDegree.textContent=temperature;
+                }
+              })
+          })
+        })
+    }
+
+    function setIcons(icon,iconid){
+      const skycons=new Skycons({color:'white'});
+      const currenticon=icon.replace(/-/g,"_").toUpperCase();
+      skycons.play();
+      return skycons.set(iconid,Skycons[currenticon]);
+    }
+})
