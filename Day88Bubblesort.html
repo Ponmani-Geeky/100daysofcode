@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 88-Bubblesort</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <input class="values" type="text"> 
+    <button class="button" type="submit">Sort</button>
+    <div class="result">
+
+    </div>
+    <script>
+      let buttonclick=document.querySelector('.button');
+      let value=document.querySelector('.values');
+      let res=document.querySelector('.result');
+
+
+      buttonclick.onclick=function view(){
+           res.innerHTML=bubble(value.value);
+      }
+
+      function bubble(value){
+        let a=[];
+         a=value.split(" ");
+        console.log(a);
+        let temp;
+        for(let i=0;i<a.length-1;i++){
+           for(let j=0;j<a.length-1;j++){
+             if(a[j]>a[j+1]){
+                temp=a[j];
+                a[j]=a[j+1];
+                a[j+1]=temp;
+             }
+           }
+        }
+
+        return a;
+      }
+    </script>
+</body>
+</html>
