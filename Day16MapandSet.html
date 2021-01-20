@@ -21,11 +21,11 @@
             console.log(map.get(hello));// even objects can be used as a key
 
             //getting first element form map
-            console.log('First element',Array.from(map)[0])// converts map to array and getting first element
+            console.log('First element>>',Array.from(map)[0])// converts map to array and getting first element
             console.log('last element',Array.from(map)[map.size-1]);// gets last element form map
-            console.log('first elemetn',map.entries().next().value);//total first map
-            console.log('first key',map.keys().next().value);// first map key 
-            console.log('first value',map.values().next().value);//first map value
+            console.log('first elemetn nextt',map.entries().next().value);//total first map
+            console.log('first key nextt',map.keys().next().value);// first map key 
+            console.log('first value nextt',map.values().next().value);//first map value
             
             for(let m of map.keys()){
                 console.log('keys',m);//keys will print
@@ -46,7 +46,7 @@
             }
 
             let maped=new Map(Object.entries(anyobj));
-            console.log(maped);//will array containing anyobject
+            console.log('mapped',maped);//will array containing anyobject
 
             //Object.fromEntries()------ opp to entries [acpt map/array and return object]
 
@@ -62,7 +62,7 @@
 
             //Set------ wont accpt duplicate values
             let set1=new Set();
-            set1.add('apple',1,'hello');//eventhough if we any no of values , it will only first value
+            set1.add('apple',1,'hello');//eventhough if we add any no of values , it will only first value
             console.log(set1);//apple
             set1.add('hello');
             

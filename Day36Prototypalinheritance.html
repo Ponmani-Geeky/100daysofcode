@@ -38,11 +38,15 @@
             this.empid=empid;
         }
         Freshers.prototype=Object.create(AdminDb.prototype);
-        Freshers.prototype.constructor=Freshers;
-        let newf=new Freshers('smeee');
+       Freshers.prototype.constructor=Freshers;
+        
        
         let emp1=new AdminDb('SM1007','ponmani');
         // console.log(emp1.empdetail());
+        let newf=new Freshers('smeee');
+        console.log(newf);
+        let newy=new newf.constructor('yyyyy');
+        console.log(newy);
     </script>
 </body>
 </html>

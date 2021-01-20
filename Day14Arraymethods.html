@@ -12,9 +12,9 @@
             //splice
             let love=['jessie','karthik','hate']
             love.splice(2,1);// form 2nd position delete 1 element , so delete hate
-            console.log(love);//jessie,karthik
+            console.log('hatedeleted....',love);//jessie,karthik
             love.splice(2,0,'father','mother');// from 2nd position delete 0 elements but add 'father and mother'
-            console.log(love);//jessie,karthik
+            console.log('parentsadded....',love);//jessie,karthik
             
             //slice
             let love2=['jessie','karthick','fight','brother'];
@@ -35,11 +35,11 @@
             let lovers={
                 0:'please',
                 1:'understand',
-                [Symbol.isConcatSpreadable]:true,// without this we cant concat array with object
+                 [Symbol.isConcatSpreadable]:true,// without this we cant concat array with object
                 length:2
             }
             let good=father.concat(lovers);
-            console.log(good);
+            console.log('concat........',good);
 
             // foreach loop
             let together=['father','mother','jessie','karthick','bike','house']
@@ -63,7 +63,7 @@
 
               //filter
               let something=love3.filter(l=>l.id<3)
-              console.log(something);//{id:1,name:'karthick'} ,{id:2,name:'love'}
+              console.log(something);//{id:1,name:'karthick'} ,{id:2,name:'jessie'}
 
               //map
               let connect=love3.map(l=>l.name.length);

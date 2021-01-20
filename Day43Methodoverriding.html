@@ -14,8 +14,9 @@
                 this.color=color;
             }
            
-           getphonedetails(model){
-                 return `Iphone${model} has ${this.size} size ,${this.camera} camera and ${this.color}`
+           getphonedetails(model,rel){
+            console.log('parent')
+                 return `Iphone${model} has ${this.size} size ,${this.camera} camera and ${this.color} ${rel}`
            }
 
            getphonecolour(){
@@ -32,14 +33,15 @@
                 this.facereg=facereg;
             }
             getphonedetails(model){
-                console.log( super.getphonedetails(model));// calling parent method using super
+                console.log('child')
+                //console.log( super.getphonedetails(model));// calling parent method using super
                  return `Iphone${model} has ${this.size} size ,${this.camera} camera and ${this.color} facereg ${this.facereg}`
            }
         }
 
         const phone11=new Newiphone('7','20mp','lightblue','true');
-        console.log(phone11.getphonedetails('11'));
-        console.log(phone11.getphonecolour());// called method from parent
+        console.log(phone11.getphonedetails('11','2010'));
+        //console.log(phone11.getphonecolour());// called method from parent
     </script>
 </body>
 </html>

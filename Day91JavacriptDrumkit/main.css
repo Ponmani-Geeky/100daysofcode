@@ -1,0 +1,47 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+.container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(https://wallpaperboat.com/wp-content/uploads/2020/03/paper-airplane-08.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.keys {
+  z-index: 1;
+  position: absolute;
+  top: 30%;
+  left: 12%;
+  display: flex;
+}
+
+.key{
+    border: 5px solid black;
+    padding: 0.5rem 2rem;
+    transition: all 0.07s;
+}
+
+kbd{
+    font-size: 6rem;
+    text-shadow: 0 0 5px black;
+    color: white;
+}
+
+.playing{
+    transform: scale(1,1);
+    border-color: #ffc600;
+    box-shadow: 0 0 10px #ffc600;
+}
+
+div div{
+    /* border: 1px solid black; */
+    margin: 1rem;
+    /* padding: 1rem; */
+}

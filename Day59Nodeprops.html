@@ -21,9 +21,9 @@
     </div>
     <script>
            let felem=document.body.firstElementChild;
-           console.log(felem);//div element
-           console.log(felem.nodeType);//for elements nodetype is 1
-           console.log(felem.firstElementChild.nodeType);
+           console.log('felem',felem);//div element
+           console.log('felem nodetype',felem.nodeType);//for elements nodetype is 1
+           console.log('fffff',felem.firstElementChild.nodeType);
            console.log(felem.firstChild.nodeType);// for text nodes nodetype is 3
            console.log(felem.firstChild);//Node props are bit difficult
            console.log(document.nodeType);// for document nodetype is 9
@@ -43,7 +43,7 @@
 
            
            //outerhtml
-           //console.log('outerhtml',document.body.outerHTML);
+           console.log('outerhtml',document.body.outerHTML);
            //document.body.outerHTML='<p>Total code vanishes</p>';// it excutes and replaces the dom 
            console.log('outerhtml22',document.body.outerHTML);//totall dom is changed
 
@@ -52,7 +52,7 @@
            console.log('textcontenrt',divs.textContent);//all the text content inside the div will printed
          
            //hiddenproperty
-           document.body.firstElementChild.hidden=true;// we can hide elements using hidden 
+           //document.body.firstElementChild.hidden=true;// we can hide elements using hidden 
     </script>
 </body>
 </html>

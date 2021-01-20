@@ -17,15 +17,16 @@
         Hello ,am ponmani
     </div>
     <script>
-         for(let i=0;i<document.body.children.length;i++){
+         for(let i=0;i<document.body.children.length; i++){
              console.log(document.body.children[i]);// it will print all the elements inside the body
          }
 
          console.log('firstelement child',document.body.firstElementChild);// will print first (div element)
          console.log('lastelement child',document.body.lastElementChild);// i will print last (Script element)
-    
+         console.log('parentelement',document.body.lastElementChild.parentElement);
     // accessing the python element
     console.log(document.body.firstElementChild.firstElementChild.lastElementChild)// <li>Python</li>
+    console.log('li parent',document.body.firstElementChild.firstElementChild.lastElementChild.parentElement);
     console.log(document.body.firstElementChild.nextElementSibling.previousElementSibling);//first div
     console.log(document.location.href);// current website link will be printed
     </script>
