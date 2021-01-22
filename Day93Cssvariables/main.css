@@ -1,0 +1,47 @@
+
+body{
+background: linear-gradient(rgb(175, 228, 241),rgb(200, 236, 235));
+overflow: hidden;
+
+}
+h2{
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 900;
+    font-size: 3rem;
+    color: whitesmoke;
+}
+.controls{
+    width: 50%;
+    margin: 1rem auto;
+}
+
+div>label{
+   font-size: 2rem;
+   margin-right: 10px;
+   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+   color:teal;
+}
+
+div>input{
+    margin-right: 10px;
+}
+
+
+:root{
+    --base:#4b68b8;
+    --spacing:10px;
+    --blur:0;
+    --transform:0;
+}
+
+img{
+    margin-top: 7rem;
+    margin-left: 7rem;
+    display: block;
+    width: 30vw;
+    padding: var(--spacing);
+    background-color: var(--base);
+    filter: blur(var(--blur));
+    transform: rotate(var(--transform));
+}
