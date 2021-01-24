@@ -1,0 +1,73 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays</title>
+</head>
+<body>
+    
+
+    <script>
+        const Tamilmovies=[
+        {Moviename: 'GameOver',Director: 'Ashwin Saravanan',RealeaseYear:2019},
+        {Moviename: 'Managaram',Director:'Lokesh Kangaraj',RealeaseYear:2017},
+        {Moviename: 'Pizza',Director: 'Karthik Subbaraj',RealeaseYear:2012},
+        {Moviename: 'Ayan',Director: 'K.V Anand',RealeaseYear:2009},
+        {Moviename: 'Kaakha Kaakha',Director: 'Gautham Menon',RealeaseYear:2003},
+        {Moviename: 'Thupaaki',Director: 'A.R Murgadoss',RealeaseYear:2012},
+        {Moviename: 'Nanum Rowdy Dhan',Director: 'Vigesh Shivan',RealeaseYear:2015},
+        {Moviename: 'Aaytha Ezhuthu',Director: 'Mani Ratam',RealeaseYear:2004},
+    ];
+
+    //1.[FILTER] filter Movies released after 2010
+    const movies=Tamilmovies.filter(mfilter=>{
+        if(mfilter.RealeaseYear>2010){
+            return true;
+        }
+    })
+    console.table(movies);
+    //Output
+// 0	"GameOver"	"Ashwin Saravanan"	2019
+// 1	"Managaram"	"Lokesh Kangaraj"	2017
+// 2	"Pizza"	"Karthik Subbaraj"	2012
+// 3	"Thupaaki"	"A.R Murgadoss"	2012
+// 4	"Nanum Rowdy Dhan"	"Vigesh Shivan"	2015
+
+//2.[MAP] Moviename and directorName
+const moviename=Tamilmovies.map(movie=>{
+    return `${movie.Moviename} ==> ${movie.Director}`
+})
+console.table(moviename);
+
+//output
+// 0 "GameOver ==> Ashwin Saravanan"
+// 1	"Managaram ==> Lokesh Kangaraj"
+// 2	"Pizza ==> Karthik Subbaraj"
+// 3	"Ayan ==> K.V Anand"
+// 4	"Kaakha Kaakha ==> Gautham Menon"
+// 5	"Thupaaki ==> A.R Murgadoss"
+// 6	"Nanum Rowdy Dhan ==> Vigesh Shivan"
+// 7	"Aaytha Ezhuthu ==> Mani Ratam"
+
+// 3.[SORT] Old movies to new movies
+const sortm=Tamilmovies.sort((a,b)=>a.RealeaseYear>b.RealeaseYear ? 1 : -1);
+console.table(sortm);
+
+//output
+// 0 "Kaakha Kaakha"	"Gautham Menon"	2003
+// 1	"Aaytha Ezhuthu"	"Mani Ratam"	2004
+// 2	"Ayan"	"K.V Anand"	2009
+// 3	"Thupaaki"	"A.R Murgadoss"	2012
+// 4	"Pizza"	"Karthik Subbaraj"	2012
+// 5	"Nanum Rowdy Dhan"	"Vigesh Shivan"	2015
+// 6	"Managaram"	"Lokesh Kangaraj"	2017
+// 7	"GameOver"	"Ashwin Saravanan"	2019
+
+//4.[Reduce] Just addup all the movie released Year
+const years=Tamilmovies.reduce((total,year)=>{
+    return total+year.RealeaseYear;
+},0);
+console.log(years);//16091
+    </script>
+</body>
+</html>
