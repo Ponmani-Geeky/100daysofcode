@@ -1,0 +1,23 @@
+body{
+    text-align: center;
+    background: darkgray;
+}
+
+.search{
+    padding: 0.6rem;
+    width: 20rem;
+}
+
+ul{
+    list-style-type: none;
+    text-align: center;
+}
+
+li{
+    border: 1px solid black;
+    background: white;
+    color: black;
+    width: 19rem;
+    margin-left: 466px;
+    padding: 0.6rem;
+}
