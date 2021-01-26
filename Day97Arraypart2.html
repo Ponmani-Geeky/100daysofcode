@@ -1,0 +1,55 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+//Due to some issue in system it accpeted all age group peoples so
+//Removing people whose age is less than 18 for adult Only movie
+const peoples=[
+{Name:'Siva',age:28,ticketNo:67},
+{Name:'Ganesh',age:17,ticketNo:88},
+{Name:'Hassni',age:19,ticketNo:47},
+{Name:'vamsi',age:30,ticketNo:98},
+{Name:'muthupandi',age:50,ticketNo:4},
+]
+//First we will check anyone blackseep(Who have age less than 18)
+const checkone=peoples.some((people)=>{
+    return people.age<18
+})
+console.log(checkone);// true
+
+//Next we will check whether everyone is blackseep?
+const checktwo=peoples.every((people)=>{
+    return people.age<18
+})
+//thank god only few
+console.log(checktwo);//false
+
+//We will find blackseep's name first
+const checkthree=peoples.find(people=>{
+    return people.age<18
+})
+//found? find will return first found value only
+console.log(checkthree);//{Name: "Ganesh", age: 17, ticketNo: 1}
+
+//Finding ganesh index
+const checkfour=peoples.findIndex(people=>{
+    return people.age<18;
+})
+//findindex also return the first found value
+console.log(checkfour);
+
+//splice to remove ganesh
+peoples.splice(checkfour,1);
+console.log(peoples);//ganesh removed
+    </script>
+</body>
+</html>
+
+
+
