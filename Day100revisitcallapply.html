@@ -1,0 +1,36 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call/apply</title>
+</head>
+<body>
+    <script>
+        //Basically Normal factory function this keyword refers to Gobal[window]scope
+        //here we are changing it
+        function programming(learn1,learn2){
+            return(`Hello,${this.name} is a good guy ,and he is learning ${learn1},${learn2}}`)
+        }
+
+        let obj1={
+            name:'Ponmani'
+        }
+
+        let obj2={
+            name:'JD'
+        }
+
+        //call --syntax [function.call('reference(this)','argument')]
+        let result1=programming.call(obj1,'javascript')
+        console.log('Result1',result1);// Hello,Ponmani is a good guy ,and he is learning javascript
+
+        let result2=programming.call(obj2,'javascript')
+        console.log('Result2',result2);// Hello,JD is a good guy ,and he is learning javascript
+
+        let result3=programming.apply(obj2,['javascript','java'])
+        console.log('Result3',result3);// Hello,JD is a good guy ,and he is learning javascript,java
+        
+
+    </script>
+</body>
+</html>
